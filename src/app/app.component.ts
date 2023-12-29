@@ -25,8 +25,4 @@ export class AppComponent {
   iconList = faList;
   // marker
   markers: marker[] = [];
-
-  constructor(private map: MapService) {
-
-  }
 }
