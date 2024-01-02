@@ -1,8 +1,9 @@
-// marker type 定義
-export interface marker {
+ // marker type 定義
+ export interface marker {
   label?: string;
   url: string;
   draggable: boolean;
+
 
   updated_at: string; //最後更新時間
   name_tw: string; //站別 ex.捷運科技大樓站
