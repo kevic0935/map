@@ -1,10 +1,11 @@
  // marker type 定義
  export interface marker {
+
   label?: string;
   url: string;
   draggable: boolean;
 
-
+  area_code: string; //縣市
   updated_at: string; //最後更新時間
   name_tw: string; //站別 ex.捷運科技大樓站
   address_tw: string; //地址 ex.復興南路二段235號前
