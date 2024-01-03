@@ -27,7 +27,12 @@
             "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                 "glob": "**/*",
+                 "input": "./node_modules/leaflet/dist/images/",
+                 "output": "./assets/"
+              }
             ],
             "styles": [
               "src/styles.sass",
@@ -36,7 +41,7 @@
               "./node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": [
-              "node_modules/leaflet/dist/leaflet.js"
+              "./node_modules/leaflet/dist/leaflet.js"
             ]
           },
           "configurations": {
@@ -95,7 +100,12 @@
             "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                 "glob": "**/*",
+                 "input": "./node_modules/leaflet/dist/images/",
+                 "output": "./assets/"
+              }
             ],
             "styles": [
               "src/styles.sass",
@@ -104,7 +114,7 @@
               "./node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": [
-              "node_modules/leaflet/dist/leaflet.js"
+              "./node_modules/leaflet/dist/leaflet.js"
             ]
           }
         }
