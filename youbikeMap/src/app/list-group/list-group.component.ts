@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { COUNTY } from '../county';
 import { marker } from '../map';
 import { MapsService } from 'src/map.service';
@@ -9,26 +9,26 @@ import { MapsService } from 'src/map.service';
   styleUrls: ['./list-group.component.sass']
 })
 export class ListGroupComponent {
-
   // 區域
   countys = COUNTY;
   // 用空字符串初始化
   selectedCityCode: string = '';
   // markers 地標初始化
   markers: marker[] = [];
-  // 定義 selectedAreaCode
+  // 定義 縣市
   selectedAreaCode: any;
 
   // 訂閱YouBike api
-  constructor(private map: MapsService) {
+  constructor(private map: MapsService) {}
+  // 初始
+  ngOnInit(): void {
     this.getYouBikeData();
   }
 
   onSelectionChange(event: any) {
-    // 更新selectedAreaCode
+    // 更新縣市
     this.selectedAreaCode = event.target.value;
     console.log('Area code:', this.selectedAreaCode);
-    this.getYouBikeData();
   }
 
   // 定義getYouBikeData

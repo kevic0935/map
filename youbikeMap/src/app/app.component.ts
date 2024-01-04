@@ -11,12 +11,4 @@ import { COUNTY } from './county';
 export class AppComponent {
 
 
-
-  // 訂閱YouBike api
-  // constructor(private map: MapsService) {
-  //   this.getYouBikeData();
-  // }
-
-
-
 }

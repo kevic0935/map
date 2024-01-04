@@ -16,8 +16,7 @@ export class MapGroupComponent implements OnInit {
   markers: marker[] = [];
 
   // 訂閱YouBike api
-  constructor(private map: MapsService) {
-  }
+  constructor(private map: MapsService) {}
 
   ngOnInit(): void {
     // Leaflet 初始化
@@ -27,12 +26,12 @@ export class MapGroupComponent implements OnInit {
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
-    // Get YouBike data and create markers
+    // 抓api
     this.map.getData().subscribe((data: any) => {
       this.markers = [];
-      const retVal: any[] = data.retVal.slice(0, 30);  // Limit to the first 30 records
+      const retVal: any[] = data.retVal.slice(0, 30);
 
-      const markerArray: L.Marker[] = [];  // Store Leaflet markers for fitBounds
+      const markerArray: L.Marker[] = [];
 
       retVal.forEach((x) => {
         const lat: number = Number(x.lat);
@@ -72,7 +71,6 @@ export class MapGroupComponent implements OnInit {
         }
       });
 
-      // Adjust map bounds to fit all markers
       if (markerArray.length > 0) {
         const group: L.FeatureGroup = L.featureGroup(markerArray);
         map.fitBounds(group.getBounds());
